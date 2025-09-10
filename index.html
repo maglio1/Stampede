@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matt Aglio — Starter Site</title>
+  <meta name="description" content="Professional services with a clean, fast, and mobile‑first site. Built for GitHub Pages + custom domain." />
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:," />
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#111218; --ink:#eaeef2; --muted:#b8c0cc; --accent:#59c3ff; --accent-2:#7cffb3;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.25)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,12,16,.8);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #1e2028;z-index:10}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    nav a{margin:0 10px;color:var(--muted)}
+    nav a.active, nav a:focus{color:var(--ink)}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:60px 0}
+    .card{background:var(--card);border:1px solid #1e2028;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .p24{padding:24px}
+    h1{font-size:clamp(32px,4.8vw,56px);line-height:1.1;margin:0 0 14px}
+    .lead{color:var(--muted);font-size:18px}
+    .cta{display:flex;gap:12px;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid #1e2028;background:#161821;color:#eaf2ff;font-weight:600;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#4aa3ff);color:#06141f}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .kpi{padding:16px}
+    .kpi h3{margin:0 0 6px}
+
+    section{padding:40px 0}
+    h2{font-size:28px;margin:0 0 14px}
+    .muted{color:var(--muted)}
+
+    .features .item{display:flex;gap:14px;padding:16px;border:1px solid #1e2028;border-radius:14px}
+    .features .icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+
+    .contact .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #283042;background:#0f1117;color:var(--ink)}
+    textarea{min-height:120px}
+    .note{font-size:13px;color:var(--muted)}
+
+    footer{border-top:1px solid #1e2028;color:#95a3b8}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .contact .row{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+  <!-- Analytics placeholders (uncomment + replace IDs when ready)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+  <!-- Google Tag Manager (head) placeholder
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXX');</script>
+  -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) placeholder
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  -->
+  <header>
+    <div class="container bar">
+      <div class="logo"><span class="dot"></span> <span>Matt Aglio</span></div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Clean, fast, and built to convert.</h1>
+        <p class="lead">A lightweight, mobile‑first site designed for GitHub Pages and a custom domain. Drop‑in support for analytics, scheduling, payments, and CRM.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Book a chat</a>
+          <a class="btn" href="#services">See services</a>
+        </div>
+        <div class="grid" style="margin-top:22px">
+          <div class="card kpi"><h3>~30KB CSS</h3><div class="muted">No build tools required</div></div>
+          <div class="card kpi"><h3>99+ Lighthouse</h3><div class="muted">Optimized for speed</div></div>
+          <div class="card kpi"><h3>1‑file deploy</h3><div class="muted">Perfect for GitHub Pages</div></div>
+        </div>
+      </div>
+      <div class="card p24">
+        <h2 style="margin-top:0">What you get</h2>
+        <ul class="muted">
+          <li>Custom domain pointing + HTTPS</li>
+          <li>Drop‑in Google Analytics / GTM</li>
+          <li>Calendly (or similar) inline embed</li>
+          <li>Stripe Checkout link buttons</li>
+          <li>Form handling via Formspree/Getform</li>
+          <li>HubSpot/CRM tracking script ready</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <p class="muted">Swap these for your offers. Each item is built as a simple, fast block.</p>
+      <div class="features grid">
+        <div class="item">
+          <div class="icon"></div>
+          <div>
+            <strong>Web Audits</strong>
+            <div class="muted">Actionable teardown of site speed, SEO, and conversion friction.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="icon"></div>
+          <div>
+            <strong>Local SEO</strong>
+            <div class="muted">GMB optimization, reviews strategy, and citation cleanup.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="icon"></div>
+          <div>
+            <strong>Paid Media</strong>
+            <div class="muted">Search, PMax, YouTube retargeting, and creative testing.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="muted">Short bio, credibility markers, and a line about your operating area (DMV). Keep this lean for first paint speed.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p class="muted">This form posts to Formspree by default. Replace the action URL with your form endpoint, or wire up HubSpot.</p>
+      <form class="card p24" action="https://formspree.io/f/your-id" method="POST">
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me a bit about your project…" required></textarea>
+        </div>
+        <div class="note" style="margin-top:10px">By submitting, you agree to be contacted. No spam, ever.</div>
+        <button class="btn primary" type="submit" style="margin-top:14px">Send</button>
+      </form>
+
+      <div class="card p24" style="margin-top:16px">
+        <h3 style="margin:0 0 8px">Prefer to book directly?</h3>
+        <p class="muted">Drop in your Calendly inline embed script below.</p>
+        <!-- Calendly inline widget placeholder:
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME/intro" style="min-width:320px;height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:24px 24px 36px">
+      © <span id="year"></span> Matt Aglio. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Tiny niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
