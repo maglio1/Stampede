@@ -1,74 +1,97 @@
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const id=a.getAttribute('href').slice(1);
-    const el=document.getElementById(id);
-    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
-  }, {passive:true});
+// ===== Modal helpers =====
+function openBackdrop(backdrop) {
+  if (!backdrop) return;
+  backdrop.removeAttribute('aria-hidden');
+  document.documentElement.style.overflow = 'hidden';
+  // Focus the first focusable control inside modal
+  const firstBtn = backdrop.querySelector('button, [href], input, select, textarea');
+  if (firstBtn) firstBtn.focus();
+}
+
+function closeBackdrop(backdrop) {
+  if (!backdrop) return;
+  backdrop.setAttribute('aria-hidden', 'true');
+  document.documentElement.style.overflow = '';
+}
+
+// ===== Audit Modal (opens from header buttons) =====
+const auditBackdrop = document.getElementById('auditModalBackdrop');
+const openAuditBtns = document.querySelectorAll('[data-open-audit]');
+const closeAuditBtns = document.querySelectorAll('[data-close-audit]');
+
+openAuditBtns.forEach(btn => btn.addEventListener('click', () => openBackdrop(auditBackdrop)));
+closeAuditBtns.forEach(btn => btn.addEventListener('click', () => {
+  // reset success state if shown
+  const success = document.getElementById('auditSuccess');
+  const form = document.getElementById('auditForm');
+  if (success) success.style.display = 'none';
+  if (form) form.style.display = '';
+  closeBackdrop(auditBackdrop);
+}));
+
+// Close audit modal when clicking outside modal content
+auditBackdrop?.addEventListener('click', (e) => {
+  if (e.target === auditBackdrop) {
+    closeBackdrop(auditBackdrop);
+  }
 });
 
-// ===== Modal (audit) =====
-const backdrop = document.getElementById('auditModalBackdrop');
-let lastOpener = null;
-
-function trapFocus(e){
-  if(backdrop.getAttribute('aria-hidden') === 'true') return;
-  const focusables = backdrop.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-  if(!focusables.length) return;
-  const first = focusables[0], last = focusables[focusables.length-1];
-  if(e.key === 'Tab'){
-    if(e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
-    else if(!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
-  }
-  if(e.key === 'Escape'){ closeModal(); }
-}
-
-function openModal(opener){
-  if(!backdrop) return;
-  lastOpener = opener || null;
-  backdrop.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
-  const firstInput = backdrop.querySelector('input, textarea, select, button');
-  setTimeout(()=> firstInput?.focus(), 30);
-  document.addEventListener('keydown', trapFocus);
-}
-function closeModal(){
-  if(!backdrop) return;
-  backdrop.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
-  document.removeEventListener('keydown', trapFocus);
-  if(lastOpener) lastOpener.focus();
-}
-
-document.querySelectorAll('[data-open-audit]').forEach(b=>b.addEventListener('click', e=>openModal(e.currentTarget)));
-document.querySelectorAll('[data-close-audit]').forEach(b=>b.addEventListener('click', closeModal));
-backdrop?.addEventListener('click', e=>{ if(e.target===backdrop) closeModal(); });
-
-// Modal success state
+// ===== Audit Form handling (shows success state inside modal) =====
 const auditForm = document.getElementById('auditForm');
-const auditSuccess = document.getElementById('auditSuccess');
-auditForm?.addEventListener('submit', e=>{
-  e.preventDefault();
-  if(!auditForm.checkValidity()){
-    auditForm.reportValidity();
-    return;
-  }
-  auditForm.style.display='none';
-  auditSuccess.style.display='block';
-});
+if (auditForm) {
+  auditForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-// ===== Contact form lightweight hints =====
+    // TODO: integrate with your backend / Formspree / Netlify if desired.
+    // For now, we just show success state.
+    const success = document.getElementById('auditSuccess');
+    auditForm.style.display = 'none';
+    if (success) success.style.display = '';
+    auditForm.reset();
+  });
+}
+
+// ===== Growth Form handling (shows separate thank-you popup) =====
 const growthForm = document.getElementById('growthForm');
-const growthHint = document.getElementById('growthHint');
-growthForm?.addEventListener('submit', e=>{
-  e.preventDefault();
-  if(!growthForm.checkValidity()){
-    growthHint.hidden = false;
-    growthHint.textContent = 'Please complete required fields and valid email.';
-    growthForm.reportValidity();
-    return;
+const thanksBackdrop = document.getElementById('thanksModalBackdrop');
+const closeThanksBtns = document.querySelectorAll('[data-close-thanks]');
+
+if (growthForm) {
+  growthForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Basic front-end validation
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    if (!name.value.trim() || !email.value.trim()) {
+      const hint = document.getElementById('growthHint');
+      if (hint) {
+        hint.hidden = false;
+        hint.textContent = 'Please enter your name and a valid email.';
+      }
+      return;
+    }
+
+    // TODO: integrate with Formspree/Netlify (uncomment and replace URL)
+    // fetch('https://formspree.io/f/XXXXXXXX', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(Object.fromEntries(new FormData(growthForm)))
+    // }).then(() => { ... });
+
+    // Show thanks popup
+    openBackdrop(thanksBackdrop);
+    growthForm.reset();
+    const hint = document.getElementById('growthHint');
+    if (hint) { hint.hidden = true; hint.textContent = ''; }
+  });
+}
+
+closeThanksBtns.forEach(btn => btn.addEventListener('click', () => closeBackdrop(thanksBackdrop)));
+
+// Close thanks modal when clicking outside modal content
+thanksBackdrop?.addEventListener('click', (e) => {
+  if (e.target === thanksBackdrop) {
+    closeBackdrop(thanksBackdrop);
   }
-  growthHint.hidden = false;
-  growthHint.textContent = 'Thanks! We will be in touch.';
-  growthForm.reset();
 });
