@@ -118,7 +118,14 @@ nav .inner{display:flex;align-items:center;justify-content:space-between;padding
   border:1px solid rgba(255,255,255,.12);
   border-radius:16px; padding:18px;
 }
-.contact-brand img{width:120px;height:auto;display:block}
+.contact-brand img {
+  width:100%;
+  max-width:360px;
+  height:auto;
+  display:block;
+  border-radius:12px;
+  filter: drop-shadow(0 15px 35px rgba(124,58,237,.35)) drop-shadow(0 0 25px rgba(124,58,237,.25));
+}
 
 /* Forms */
 .audit{background:linear-gradient(145deg, rgba(34,211,238,.06), rgba(124,58,237,.08));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:22px}
@@ -164,3 +171,4 @@ footer .sep{margin:10px auto;height:1px;background:rgba(255,255,255,.08);width:1
   .visual{width:62vw}
   .section-title{font-size:26px;padding:8px 14px}
 }
+
