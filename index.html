@@ -6,18 +6,57 @@
 
   <title>Stampede — Bold Marketing that Hits Like a Charging Bull</title>
   <meta name="description" content="Performance-first growth partner in the DMV. SEO, SEM, paid social, CRO, analytics, and audits that turn clicks into customers. Free website audit." />
-  <link rel="canonical" href="https://stampedeads.com/" />
+
+  <!-- Explicit crawler directives -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, snippet, archive, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Canonical on your new domain -->
+  <link rel="canonical" href="https://www.stampedeusa.com/" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Stampede — Bold Marketing that Hits Like a Charging Bull" />
   <meta property="og:description" content="Performance-first growth partner. We build systems that drive revenue — not vanity metrics." />
-  <meta property="og:image" content="https://stampedeads.com/assets/bull3.png" />
-  <meta property="og:url" content="https://stampedeads.com/" />
+  <meta property="og:image" content="https://www.stampedeusa.com/assets/bull3.png" />
+  <meta property="og:url" content="https://www.stampedeusa.com/" />
+  <meta property="og:site_name" content="Stampede" />
+
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stampede — Bold Marketing that Hits Like a Charging Bull" />
+  <meta name="twitter:description" content="Performance-first growth partner. We build systems that drive revenue — not vanity metrics." />
+  <meta name="twitter:image" content="https://www.stampedeusa.com/assets/bull3.png" />
 
   <link rel="icon" href="assets/logo-bull-white.png" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org (non-visual; safe) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Stampede",
+    "url": "https://www.stampedeusa.com/",
+    "logo": "https://www.stampedeusa.com/assets/bull3.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/stampedeusa",
+      "https://www.facebook.com/stampedeusa",
+      "https://x.com/stampedeusa",
+      "https://www.instagram.com/stampedeusa"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Stampede",
+    "url": "https://www.stampedeusa.com/",
+    "image": "https://www.stampedeusa.com/assets/bull3.png",
+    "address": { "@type": "PostalAddress", "addressCountry": "US" },
+    "areaServed": ["District of Columbia", "Maryland", "Virginia"]
+  }
+  </script>
 </head>
 <body>
   <!-- NAV -->
@@ -125,6 +164,18 @@
       </div>
     </section>
 
+    <!-- LOCAL SEO BLOCK (visible, natural language) -->
+    <section id="locations" aria-labelledby="locations-title">
+      <h2 id="locations-title" class="section-title">Serving the DMV — and Beyond</h2>
+      <div class="container">
+        <p class="sub sub-long">
+          Stampede is a performance-first marketing partner for businesses across the Washington, DC metro. We work with growth-minded teams in
+          Washington DC, Arlington, Alexandria, Fairfax, Tysons, Reston, Herndon, Bethesda, Silver Spring, Rockville, Gaithersburg, College Park, Laurel,
+          Annapolis, and Baltimore — with remote support across Maryland and Virginia. If you’re ready to turn traffic into customers, we’re ready to help.
+        </p>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Let’s Build Your Growth Plan</h2>
@@ -178,7 +229,20 @@
         <strong>Stampede LLC</strong>
       </p>
       <p>Based in the DMV — Locally Owned &amp; Operated</p>
-      <p><a href="mailto:info@stampedeads.com" class="mailto">info@stampedeads.com</a></p>
+
+      <!-- email + socials -->
+      <p>
+        <a href="mailto:info@stampedeusa.com" class="mailto">info@stampedeusa.com</a>
+        <span style="opacity:.6"> · </span>
+        <a href="https://www.linkedin.com/company/stampedeusa" target="_blank" rel="noopener">LinkedIn</a>
+        <span style="opacity:.6"> · </span>
+        <a href="https://www.facebook.com/stampedeusa" target="_blank" rel="noopener">Facebook</a>
+        <span style="opacity:.6"> · </span>
+        <a href="https://x.com/stampedeusa" target="_blank" rel="noopener">X</a>
+        <span style="opacity:.6"> · </span>
+        <a href="https://www.instagram.com/stampedeusa" target="_blank" rel="noopener">Instagram</a>
+      </p>
+
       <p>© 2025 Stampede. All rights reserved. <em>Built to charge ahead.</em></p>
     </div>
   </footer>
@@ -227,6 +291,20 @@
           <p>Thank you! Our team will reach out within 3 business days to schedule a brief meeting to review your website audit and discuss opportunities to increase performance.</p>
           <div class="actions"><button class="btn btn-accent underline" data-close-audit>Close</button></div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THANK YOU POPUP (used by growthForm) -->
+  <div class="modal-backdrop" id="thanksModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+      <header>
+        <h3 id="thanksTitle">You're on the list 🔥</h3>
+        <button class="btn btn-ghost" data-close-thanks aria-label="Close">Close</button>
+      </header>
+      <div class="content">
+        <p class="sub">Thanks for reaching out. We’ll review your goals and reply with next steps to build your growth plan.</p>
+        <div class="actions"><button class="btn btn-primary" data-close-thanks>Close</button></div>
       </div>
     </div>
   </div>
