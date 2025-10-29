@@ -3,195 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matt Aglio — Starter Site</title>
-  <meta name="description" content="Professional services with a clean, fast, and mobile‑first site. Built for GitHub Pages + custom domain." />
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:," />
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#111218; --ink:#eaeef2; --muted:#b8c0cc; --accent:#59c3ff; --accent-2:#7cffb3;
-      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.25)
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{opacity:.9}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,12,16,.8);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #1e2028;z-index:10}
-    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-    nav a{margin:0 10px;color:var(--muted)}
-    nav a.active, nav a:focus{color:var(--ink)}
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:60px 0}
-    .card{background:var(--card);border:1px solid #1e2028;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .p24{padding:24px}
-    h1{font-size:clamp(32px,4.8vw,56px);line-height:1.1;margin:0 0 14px}
-    .lead{color:var(--muted);font-size:18px}
-    .cta{display:flex;gap:12px;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid #1e2028;background:#161821;color:#eaf2ff;font-weight:600;cursor:pointer;transition:.2s}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),#4aa3ff);color:#06141f}
+  <title>Stampede — Bold Marketing that Hits Like a Charging Bull</title>
+  <meta name="description" content="Performance-first growth partner in the DMV. SEO, SEM, paid social, CRO, analytics, and audits that turn clicks into customers. Free website audit." />
+  <link rel="canonical" href="https://stampedeads.com/" />
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .kpi{padding:16px}
-    .kpi h3{margin:0 0 6px}
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stampede — Bold Marketing that Hits Like a Charging Bull" />
+  <meta property="og:description" content="Performance-first growth partner. We build systems that drive revenue — not vanity metrics." />
+  <meta property="og:image" content="https://stampedeads.com/assets/bull3.png" />
+  <meta property="og:url" content="https://stampedeads.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    section{padding:40px 0}
-    h2{font-size:28px;margin:0 0 14px}
-    .muted{color:var(--muted)}
+  <!-- Favicons (drop files later if you want) -->
+  <link rel="icon" href="assets/logo-bull-white.png" />
 
-    .features .item{display:flex;gap:14px;padding:16px;border:1px solid #1e2028;border-radius:14px}
-    .features .icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  <!-- Perf hints -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="styles.css" />
 
-    .contact .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #283042;background:#0f1117;color:var(--ink)}
-    textarea{min-height:120px}
-    .note{font-size:13px;color:var(--muted)}
-
-    footer{border-top:1px solid #1e2028;color:#95a3b8}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .contact .row{grid-template-columns:1fr}
-      nav{display:none}
-    }
-  </style>
-  <!-- Analytics placeholders (uncomment + replace IDs when ready)
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
-  <!-- Google Tag Manager (head) placeholder
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXX');</script>
+  <!-- GTM / GA4 placeholders (swap IDs when ready)
+  <script>/* window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} */</script>
   -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) placeholder
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  -->
-  <header>
-    <div class="container bar">
-      <div class="logo"><span class="dot"></span> <span>Matt Aglio</span></div>
-      <nav>
-        <a href="#services">Services</a>
+  <!-- NAV -->
+  <nav>
+    <div class="container inner">
+      <a href="#top" class="brand" aria-label="Stampede Home">
+        <img src="assets/logo-bull-white.png" alt="Stampede logo" width="42" height="42" />
+        <span>Stampede</span>
+      </a>
+      <div class="navlinks" role="navigation" aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#what-we-do">What We Do</a>
         <a href="#about">About</a>
-        <a href="#contact" class="active">Contact</a>
-      </nav>
+        <button class="btn btn-accent no-underline" data-open-audit>Free Website Audit</button>
+        <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title">Marketing that hits like a charging bull.</h1>
+        <p class="hero-sub">
+          We build, optimize, and scale campaigns that turn clicks into customers — profitably.
+          SEO, SEM, paid social, analytics, conversion design, and traditional media where it still works.
+        </p>
+        <div class="cta">
+          <button class="btn btn-accent underline" data-open-audit>Free Website Audit</button>
+          <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+          <a class="btn btn-secondary" href="#what-we-do">See What We Do</a>
+        </div>
+      </div>
+
+      <!-- Hero visual (not lazy to avoid LCP jank) -->
+      <div class="visual">
+        <img src="assets/bull3.png" alt="Bold purple bull charging through lightning" width="1060" height="1414" />
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h1>Clean, fast, and built to convert.</h1>
-        <p class="lead">A lightweight, mobile‑first site designed for GitHub Pages and a custom domain. Drop‑in support for analytics, scheduling, payments, and CRM.
+  <main>
+    <!-- WHAT WE DO -->
+    <section id="what-we-do" aria-labelledby="what-title">
+      <h2 id="what-title" class="section-title">What We Do</h2>
+      <div class="container">
+        <p class="sub sub-long">
+          We build growth systems, not “one-off” ads. From your website to your offers to your reporting,
+          everything connects — so every dollar knows where it’s going and what it returned.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Book a chat</a>
-          <a class="btn" href="#services">See services</a>
-        </div>
-        <div class="grid" style="margin-top:22px">
-          <div class="card kpi"><h3>~30KB CSS</h3><div class="muted">No build tools required</div></div>
-          <div class="card kpi"><h3>99+ Lighthouse</h3><div class="muted">Optimized for speed</div></div>
-          <div class="card kpi"><h3>1‑file deploy</h3><div class="muted">Perfect for GitHub Pages</div></div>
-        </div>
-      </div>
-      <div class="card p24">
-        <h2 style="margin-top:0">What you get</h2>
-        <ul class="muted">
-          <li>Custom domain pointing + HTTPS</li>
-          <li>Drop‑in Google Analytics / GTM</li>
-          <li>Calendly (or similar) inline embed</li>
-          <li>Stripe Checkout link buttons</li>
-          <li>Form handling via Formspree/Getform</li>
-          <li>HubSpot/CRM tracking script ready</li>
-        </ul>
-      </div>
-    </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <p class="muted">Swap these for your offers. Each item is built as a simple, fast block.</p>
-      <div class="features grid">
-        <div class="item">
-          <div class="icon"></div>
-          <div>
-            <strong>Web Audits</strong>
-            <div class="muted">Actionable teardown of site speed, SEO, and conversion friction.</div>
-          </div>
+        <div class="grid grid-3x2">
+          <article class="card">
+            <h3>Website Analysis &amp; Building</h3>
+            <p class="tagline">If your website isn’t driving leads, it’s just overhead.</p>
+            <p class="card-copy">We audit speed, structure, and messaging to turn your site into a lead machine — then fix what’s leaking revenue.</p>
+          </article>
+          <article class="card">
+            <h3>Digital Advertising</h3>
+            <p class="tagline">You don’t need more traffic — you need more results.</p>
+            <p class="card-copy">Search, social, display. Tight targeting, sharper offers, relentless testing. We buy media like it’s our own money.</p>
+          </article>
+          <article class="card">
+            <h3>Paid Media</h3>
+            <p class="tagline">Every ad tracked, tested, and tuned for profit.</p>
+            <p class="card-copy">Creative and copy that sell, not just “look good.” We ship fast, measure faster, and keep what wins.</p>
+          </article>
+          <article class="card">
+            <h3>SEO &amp; Local Presence</h3>
+            <p class="tagline">If they can’t find you, they’ll find your competitor.</p>
+            <p class="card-copy">Local listings, reviews, on-page SEO. We make you show up where people are already looking to buy.</p>
+          </article>
+          <article class="card">
+            <h3>Offers &amp; Creative</h3>
+            <p class="tagline">Creative built to convert, not just impress.</p>
+            <p class="card-copy">We package your value so customers can’t ignore it — clear hooks, clean design, direct paths to action.</p>
+          </article>
+          <article class="card">
+            <h3>Reporting &amp; Analytics</h3>
+            <p class="tagline">Clarity equals confidence.</p>
+            <p class="card-copy">Dashboards you’ll actually use: leads, revenue, cost, ROI. No fluff — only numbers that move decisions.</p>
+          </article>
         </div>
-        <div class="item">
-          <div class="icon"></div>
-          <div>
-            <strong>Local SEO</strong>
-            <div class="muted">GMB optimization, reviews strategy, and citation cleanup.</div>
-          </div>
+
+        <div class="kpis" aria-label="Key performance indicators">
+          <div class="kpi"><div class="num" aria-label="Lead volume increase">+38%</div><div class="label">Lead Volume</div></div>
+          <div class="kpi"><div class="num" aria-label="Website traffic increase">+61%</div><div class="label">Website Traffic</div></div>
+          <div class="kpi"><div class="num" aria-label="Sales revenue increase">+31%</div><div class="label">Sales Revenue</div></div>
         </div>
-        <div class="item">
-          <div class="icon"></div>
-          <div>
-            <strong>Paid Media</strong>
-            <div class="muted">Search, PMax, YouTube retargeting, and creative testing.</div>
-          </div>
-        </div>
+        <div class="kpi-note">Real results. No mystery math.</div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p class="muted">Short bio, credibility markers, and a line about your operating area (DMV). Keep this lean for first paint speed.</p>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About Stampede</h2>
+      <div class="container about">
+        <div class="about-copy">
+          <p>Stampede was built for business owners who want their marketing to finally make sense and make money.</p>
+          <p>We’re performance people, creative minds with sales DNA. Every campaign, every click, every pixel exists for one reason: to drive profit.</p>
+          <p>Locally owned, battle tested, and built to move fast, we work like a digital profit coach—helping you find, fix, and scale what actually grows your business.</p>
+          <p>No boardrooms, no buzzwords, no inflated reports; just strategy, speed, and results you can measure in your bank account.</p>
+          <p>We don’t chase trends; we chase outcomes. At Stampede, the only metric that matters is winning—because in our world, “good enough” gets trampled.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p class="muted">This form posts to Formspree by default. Replace the action URL with your form endpoint, or wire up HubSpot.</p>
-      <form class="card p24" action="https://formspree.io/f/your-id" method="POST">
-        <div class="row">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-        </div>
-        <div style="margin-top:12px">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me a bit about your project…" required></textarea>
-        </div>
-        <div class="note" style="margin-top:10px">By submitting, you agree to be contacted. No spam, ever.</div>
-        <button class="btn primary" type="submit" style="margin-top:14px">Send</button>
-      </form>
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Let’s Build Your Growth Plan</h2>
+      <div class="container">
+        <p class="sub">Tell us where it hurts and what “winning” looks like. We’ll map the fastest route from spend to scale.</p>
 
-      <div class="card p24" style="margin-top:16px">
-        <h3 style="margin:0 0 8px">Prefer to book directly?</h3>
-        <p class="muted">Drop in your Calendly inline embed script below.</p>
-        <!-- Calendly inline widget placeholder:
-        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME/intro" style="min-width:320px;height:700px;"></div>
-        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        -->
+        <div class="contact-wrap">
+          <div class="contact-brand">
+            <img src="assets/logo-bull-white.png" alt="Stampede logo" width="120" height="120" loading="lazy" />
+          </div>
+
+          <div class="audit">
+            <form id="growthForm" class="form-grid" novalidate>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="business">Business Name</label>
+                <input id="business" name="business" autocomplete="organization" />
+              </div>
+              <div>
+                <label for="website">Website URL</label>
+                <input id="website" name="website" inputmode="url" placeholder="https://example.com" />
+              </div>
+              <div class="full">
+                <label for="message">What are you trying to achieve?</label>
+                <textarea id="message" name="message" placeholder="e.g., lower CPL, more booked calls, faster site, better tracking"></textarea>
+              </div>
+              <div class="full" style="text-align:right">
+                <button class="btn btn-primary" type="submit">Book a Strategy Call</button>
+              </div>
+            </form>
+            <p id="growthHint" class="form-hint" aria-live="polite" hidden></p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="container" style="padding:24px 24px 36px">
-      © <span id="year"></span> Matt Aglio. All rights reserved.
+    <div class="container">
+      <div class="sep"></div>
+      <p>
+        <img src="assets/logo-bull-white.png" alt="Stampede logo" width="22" height="22" style="vertical-align:middle;margin-right:8px" />
+        <strong>Stampede LLC</strong>
+      </p>
+      <p>Based in the DMV — Locally Owned &amp; Operated</p>
+      <p><a href="mailto:info@stampedeads.com" class="mailto">info@stampedeads.com</a></p>
+      <p>© 2025 Stampede. All rights reserved. <em>Built to charge ahead.</em></p>
     </div>
   </footer>
 
-  <script>
-    // Tiny niceties
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- STICKY CTA -->
+  <div class="sticky-cta">
+    <div class="inner container">
+      <button class="btn btn-accent underline" data-open-audit>Free Website Audit</button>
+      <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+      <a class="btn btn-secondary" href="#what-we-do">See What We Do</a>
+    </div>
+  </div>
+
+  <!-- AUDIT MODAL -->
+  <div class="modal-backdrop" id="auditModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="auditTitle">
+      <header>
+        <h3 id="auditTitle">Free Website Audit</h3>
+        <button class="btn btn-ghost" data-close-audit aria-label="Close">Close</button>
+      </header>
+      <div class="content">
+        <p class="sub">Find out what’s holding your website back and what’s leaving money on the table.</p>
+        <form id="auditForm" class="form-grid" novalidate>
+          <div><label for="a_name">Name</label><input id="a_name" name="name" required /></div>
+          <div><label for="a_business">Business Name</label><input id="a_business" name="business" /></div>
+          <div><label for="a_website">Website URL</label><input id="a_website" name="website" inputmode="url" placeholder="https://example.com" /></div>
+          <div><label for="a_email">Email</label><input id="a_email" name="email" type="email" required /></div>
+          <div>
+            <label for="a_spend">Estimated Monthly Ad Spend (optional)</label>
+            <select id="a_spend" name="spend">
+              <option value="">Prefer not to say</option>
+              <option>$0</option>
+              <option>Under $500</option>
+              <option>$1K–$5K</option>
+              <option>$10K+</option>
+            </select>
+          </div>
+          <div><label for="a_sales">Estimated Monthly Sales (optional)</label><input id="a_sales" name="sales" inputmode="numeric" placeholder="$" /></div>
+          <div class="full"><label for="a_notes">Anything else?</label><textarea id="a_notes" name="notes" placeholder="Share your biggest challenges, socials, or goals."></textarea></div>
+          <div class="full" style="text-align:right">
+            <button class="btn btn-primary" type="submit">Send My Audit</button>
+            <button class="btn btn-ghost" data-close-audit type="button">Cancel</button>
+          </div>
+        </form>
+        <div id="auditSuccess" style="display:none;">
+          <p>Thank you! Our team will reach out within 3 business days to schedule a brief meeting to review your website audit and discuss opportunities to increase performance.</p>
+          <div class="actions"><button class="btn btn-accent underline" data-close-audit>Close</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
