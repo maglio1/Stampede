@@ -94,4 +94,28 @@ thanksBackdrop?.addEventListener('click', (e) => {
   if (e.target === thanksBackdrop) {
     closeBackdrop(thanksBackdrop);
   }
+});    }
+
+    // TODO: integrate with Formspree/Netlify (uncomment and replace URL)
+    // fetch('https://formspree.io/f/XXXXXXXX', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(Object.fromEntries(new FormData(growthForm)))
+    // }).then(() => { ... });
+
+    // Show thanks popup
+    openBackdrop(thanksBackdrop);
+    growthForm.reset();
+    const hint = document.getElementById('growthHint');
+    if (hint) { hint.hidden = true; hint.textContent = ''; }
+  });
+}
+
+closeThanksBtns.forEach(btn => btn.addEventListener('click', () => closeBackdrop(thanksBackdrop)));
+
+// Close thanks modal when clicking outside modal content
+thanksBackdrop?.addEventListener('click', (e) => {
+  if (e.target === thanksBackdrop) {
+    closeBackdrop(thanksBackdrop);
+  }
 });
