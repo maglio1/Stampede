@@ -104,6 +104,40 @@
       console.error("Stampede app.js error:", err);
     }
   });
+})();          const name = document.getElementById("name");
+          const email = document.getElementById("email");
+
+          if (!name?.value.trim() || !email?.value.trim()) {
+            if (hint) {
+              hint.hidden = false;
+              hint.textContent = "Please enter your name and a valid email.";
+            }
+            return;
+          }
+
+          // TODO: wire to Formspree/Netlify here if desired.
+
+          if (hint) { hint.hidden = true; hint.textContent = ""; }
+          growthForm.reset();
+          openBackdrop(thanksBackdrop);
+        });
+      }
+
+      closeThanksBtns.forEach((btn) =>
+        btn.addEventListener("click", () => closeBackdrop(thanksBackdrop))
+      );
+
+      if (thanksBackdrop) {
+        thanksBackdrop.addEventListener("click", (e) => {
+          if (e.target === thanksBackdrop) closeBackdrop(thanksBackdrop);
+        });
+      }
+
+      console.log("Stampede app.js loaded OK");
+    } catch (err) {
+      console.error("Stampede app.js error:", err);
+    }
+  });
 })();    }
 
     // TODO: integrate with Formspree/Netlify (uncomment and replace URL)
