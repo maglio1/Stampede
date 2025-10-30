@@ -1,0 +1,50 @@
+/* fixes.css — mobile hardening + modal visibility; safe to remove anytime */
+
+/* --- Modal visibility safety --- */
+.modal-backdrop[aria-hidden="true"] { display: none !important; }
+.modal-backdrop[aria-hidden="false"],
+.modal-backdrop.is-open { display: flex !important; }
+.modal-backdrop { align-items: center; justify-content: center; }
+
+/* --- Base safety for images/containers --- */
+img { max-width: 100%; height: auto; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: 16px; }
+
+/* --- Scalable type --- */
+.hero-title { font-size: clamp(28px, 6vw, 48px); line-height: 1.1; }
+.hero-sub, .sub, .card-copy, .tagline { font-size: clamp(15px, 3.5vw, 18px); }
+
+/* --- Grids that collapse --- */
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; }
+.grid.grid-3x2 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-grid .full { grid-column: 1 / -1; }
+.contact-wrap { display: grid; grid-template-columns: 360px 1fr; gap: 24px; align-items: start; }
+.contact-brand img { width: 100%; height: auto; }
+
+/* --- Flexible nav & sticky CTA --- */
+.navlinks { display: flex; gap: 10px; flex-wrap: wrap; }
+.sticky-cta .inner.container { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.sticky-cta .btn { min-width: 180px; }
+
+/* --- Modal sizing protection --- */
+.modal { max-width: min(720px, 92vw); width: 100%; }
+.modal .content { max-height: 70vh; overflow: auto; }
+
+/* --- Responsive breakpoints --- */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .visual { order: -1; } /* bull image first on smaller screens */
+  .contact-wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .grid.grid-3x2 { grid-template-columns: 1fr 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .grid.grid-3x2 { grid-template-columns: 1fr; }
+  .cta { display: grid; gap: 10px; grid-template-columns: 1fr; }
+  .btn { width: 100%; }
+  nav .navlinks a, nav .navlinks .btn { flex: 1 1 auto; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+}
