@@ -13,7 +13,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hide-sm { display: inline-flex; }
 @media (max-width: 768px) { .hide-sm { display: none !important; } }
 
-/* Hero grid */
+/* Hero grid (default) */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -102,17 +102,25 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- Large screen optical hero centering (broader breakpoint + higher specificity) --- */
 @media (min-width: 1280px) {
+  /* equal columns and centered grid take precedence */
   body header.hero .container.hero-grid {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
     justify-content: center !important;
     align-items: center !important;
+    justify-items: center !important;
     margin-inline: auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
+    column-gap: 32px !important;
   }
-  body header.hero .hero-copy {
-    padding-left: 5% !important;   /* tiny nudge left for optical balance */
+
+  /* center the image inside its grid cell */
+  body header.hero .visual {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
-  body header.hero .visual img {
-    transform: translateX(2%) !important; /* nudge image right slightly */
-  }
+
+  /* subtle optical nudge */
+  body header.hero .hero-copy { padding-left: 2% !important; }
+  body header.hero .visual img { transform: translateX(1%) !important; }
 }
