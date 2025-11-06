@@ -46,9 +46,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* Center the "Real results. No mystery math." note */
 .kpi-note {
   text-align: center;
-  margin: 24px auto 48px;
   font-weight: 500;
   display: block;
+  margin: 0 auto;
 }
 
 /* Contact layout */
@@ -84,6 +84,18 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 800px;
   margin-inline: auto;
   text-align: center;
+}
+
+/* Equalize spacing around KPI note */
+:root {
+  --note-gap: clamp(20px, 3.5vw, 32px);
+}
+#what-we-do .kpis { margin-bottom: var(--note-gap) !important; }
+.kpi-note { margin: 0 auto var(--note-gap) !important; }
+#about { padding-top: var(--note-gap) !important; }
+#what-we-do { padding-bottom: 0 !important; }
+@media (max-width: 420px) {
+  :root { --note-gap: clamp(18px, 5.5vw, 28px); }
 }
 
 /* Tablet */
