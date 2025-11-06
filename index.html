@@ -151,22 +151,10 @@
 
           <div class="audit">
             <form id="growthForm" class="form-grid" novalidate>
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div>
-                <label for="business">Business Name</label>
-                <input id="business" name="business" autocomplete="organization" />
-              </div>
-              <div>
-                <label for="website">Website URL</label>
-                <input id="website" name="website" inputmode="url" placeholder="https://example.com" />
-              </div>
+              <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
+              <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+              <div><label for="business">Business Name</label><input id="business" name="business" autocomplete="organization" /></div>
+              <div><label for="website">Website URL</label><input id="website" name="website" inputmode="url" placeholder="https://example.com" /></div>
               <div class="full">
                 <label for="message">What are you trying to achieve?</label>
                 <textarea id="message" name="message" placeholder="What’s your goal? Attract new customers, generate quality leads, improve SEO, launch a website that sells, or finally make your ads on Google and Facebook pay off?"></textarea>
@@ -175,7 +163,6 @@
                 <button class="btn btn-primary" type="submit">Book a Strategy Call</button>
               </div>
             </form>
-            <p id="growthHint" class="form-hint" aria-live="polite" hidden></p>
           </div>
         </div>
       </div>
@@ -192,6 +179,23 @@
       </p>
       <p>Based in the DMV — Locally Owned &amp; Operated</p>
       <p><a href="mailto:charge@stampedeusa.com" class="mailto">charge@stampedeusa.com</a></p>
+
+      <!-- Social icons -->
+      <div class="footer-social" aria-label="Social media">
+        <a href="https://facebook.com/stampedeusa" target="_blank" rel="noopener" aria-label="Visit Stampede on Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.64L18 10h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/stampedeusa" target="_blank" rel="noopener" aria-label="Visit Stampede on LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+
       <p>© 2025 Stampede. All rights reserved. <em>Built to charge ahead.</em></p>
     </div>
   </footer>
@@ -204,50 +208,6 @@
     </div>
   </div>
 
-  <div class="modal-backdrop" id="auditModalBackdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="auditTitle">
-      <header>
-        <h3 id="auditTitle">Free Website Audit</h3>
-        <button class="btn btn-ghost" data-close-audit aria-label="Close">Close</button>
-      </header>
-      <div class="content">
-        <p class="sub">Find out what’s holding your website back and what’s leaving money on the table.</p>
-        <form id="auditForm" class="form-grid" novalidate>
-          <div><label for="a_name">Name</label><input id="a_name" name="name" required /></div>
-          <div><label for="a_business">Business Name</label><input id="a_business" name="business" /></div>
-          <div><label for="a_website">Website URL</label><input id="a_website" name="website" inputmode="url" placeholder="https://example.com" /></div>
-          <div><label for="a_email">Email</label><input id="a_email" name="email" type="email" required /></div>
-          <div>
-            <label for="a_spend">Estimated Monthly Ad Spend (optional)</label>
-            <select id="a_spend" name="spend">
-              <option value="">Prefer not to say</option>
-              <option>$0</option>
-              <option>Under $500</option>
-              <option>$1K–$5K</option>
-              <option>$10K+</option>
-            </select>
-          </div>
-          <div><label for="a_sales">Estimated Monthly Sales (optional)</label><input id="a_sales" name="sales" inputmode="numeric" placeholder="$" /></div>
-          <div class="full"><label for="a_notes">Anything else?</label><textarea id="a_notes" name="notes" placeholder="Share your biggest challenges, socials, or goals."></textarea></div>
-          <div class="full" style="text-align:right">
-            <button class="btn btn-primary" type="submit">Send My Audit</button>
-            <button class="btn btn-ghost" data-close-audit type="button">Cancel</button>
-          </div>
-        </form>
-        <div id="auditSuccess" style="display:none;">
-          <p>Thank you! Our team will reach out within 3 business days to schedule a brief meeting to review your website audit and discuss opportunities to increase performance.</p>
-          <div class="actions"><button class="btn btn-accent underline" data-close-audit>Close</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="app.js"></script>
 </body>
 </html>
-
-
-  <script src="app.js"></script>
-</body>
-</html>
-
