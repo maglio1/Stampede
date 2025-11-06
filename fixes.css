@@ -100,19 +100,19 @@ img { max-width: 100%; height: auto; display: block; }
   .kpis { grid-template-columns: 1fr; }
 }
 
-/* --- Large screen optical hero centering --- */
-@media (min-width: 1440px) {
-  header.hero .container.hero-grid {
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    margin-inline: auto;
-    max-width: 1400px;
+/* --- Large screen optical hero centering (broader breakpoint + higher specificity) --- */
+@media (min-width: 1280px) {
+  body header.hero .container.hero-grid {
+    grid-template-columns: 1fr 1fr !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-inline: auto !important;
+    max-width: 1400px !important;
   }
-  header.hero .hero-copy {
-    padding-left: 5%;
+  body header.hero .hero-copy {
+    padding-left: 5% !important;   /* tiny nudge left for optical balance */
   }
-  header.hero .visual img {
-    transform: translateX(2%);
+  body header.hero .visual img {
+    transform: translateX(2%) !important; /* nudge image right slightly */
   }
 }
