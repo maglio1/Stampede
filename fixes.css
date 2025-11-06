@@ -1,4 +1,4 @@
-/* fixes.css — mobile polish, menu improvements, section readability */
+/* fixes.css — layout polish, spacing correction, readability */
 
 /* General safety */
 html, body { overflow-x: hidden; }
@@ -6,96 +6,52 @@ img { max-width: 100%; height: auto; display: block; }
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: 16px; }
 
 /* Nav layout */
-.navlinks {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+.navlinks { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .navlinks a { text-decoration: none; }
 
 /* Hide-on-small helper */
 .hide-sm { display: inline-flex; }
-@media (max-width: 768px) {
-  .hide-sm { display: none !important; }
-}
+@media (max-width: 768px) { .hide-sm { display: none !important; } }
 
 /* Hero grid */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 24px;
-  align-items: center;
-}
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; }
 
-/* What We Do grid (desktop default) */
-.grid.grid-3x2 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 16px;
-}
+/* What We Do grid */
+.grid.grid-3x2 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
 
-/* KPIs */
-.kpis {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 12px;
-}
+/* KPI grid */
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
 .kpi .num { font-size: clamp(20px, 6vw, 32px); }
 
-/* Center the "Real results. No mystery math." note */
+/* Balanced "Real results. No mystery math." spacing */
 .kpi-note {
   text-align: center;
   font-weight: 500;
   display: block;
-  margin: 0 auto;
+  margin-top: 32px;
+  margin-bottom: 0;
 }
+#about { padding-top: 32px; }
 
 /* Contact layout */
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 24px;
-  align-items: start;
-}
+.contact-wrap { display: grid; grid-template-columns: 360px 1fr; gap: 24px; align-items: start; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .form-grid .full { grid-column: 1 / -1; }
 
-/* Sticky CTA polish */
+/* Sticky CTA */
 .sticky-cta { position: sticky; bottom: 0; z-index: 50; }
 .sticky-cta .inner.container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 10px 12px;
+  display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 10px 12px;
 }
 
-/* About section readability improvements */
-#about {
-  background-color: #000;
-  color: #f0f0f0;
-  padding-block: 60px;
-}
+/* About section readability */
+#about { background-color: #000; color: #f0f0f0; }
 #about .about-copy p {
   font-weight: 500;
   line-height: 1.6;
   max-width: 800px;
   margin-inline: auto;
   text-align: center;
-}
-
-/* Equalize spacing around KPI note */
-:root {
-  --note-gap: clamp(20px, 3.5vw, 32px);
-}
-#what-we-do .kpis { margin-bottom: var(--note-gap) !important; }
-.kpi-note { margin: 0 auto var(--note-gap) !important; }
-#about { padding-top: var(--note-gap) !important; }
-#what-we-do { padding-bottom: 0 !important; }
-@media (max-width: 420px) {
-  :root { --note-gap: clamp(18px, 5.5vw, 28px); }
 }
 
 /* Tablet */
@@ -107,7 +63,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Large phones / small tablets */
 @media (max-width: 912px) {
-  .grid.grid-3x2 { grid-template-columns: 1fr 1fr; } /* 2×2 wrap on mobile */
+  .grid.grid-3x2 { grid-template-columns: 1fr 1fr; }
   .kpis { grid-template-columns: 1fr 1fr; }
 }
 
